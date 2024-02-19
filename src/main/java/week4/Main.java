@@ -11,11 +11,17 @@ public class Main {
     myIPhone.setServiceProvider(orange);
     Phone mySamsung=new Iphone15();
     mySamsung.setServiceProvider(orange);
-
-    myIPhone.sendTextMessage("444-888","Testing messaging functions");
+    myIPhone.addContact("444-888", "John","Sterling");
+    mySamsung.addContact("444-999","Jose","Mourinho");
+    myIPhone.sendTextMessage("444-999","Testing messaging functions");
     orange.transferMessaged(myIPhone);
     mySamsung.receiveTextMessage();
-        System.out.println(mySamsung.getReceivedMessage());
+    myIPhone.sendTextMessage("444-999","Another test");
+    orange.transferMessaged(myIPhone);
+    mySamsung.receiveTextMessage();
+    mySamsung.seeMessagesForContact("Jose");
+
+
 
 
 
