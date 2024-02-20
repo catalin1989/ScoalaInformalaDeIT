@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 //This is the most important class
 //Disclaimer, all the methods work only with the contact that are in the phone agenda
 //If I try to use a method with an unknown number I will get a NullPointerException
@@ -20,7 +21,7 @@ public abstract class Phone implements PhoneBehaviour {
     protected Map<Contact, MessageAgenda> messagesAgenda;
     protected Map<Contact, CallAgenda> callAgenda;
 
-    protected List<Call> allCalls=new ArrayList<>();
+    protected List<Call> allCalls = new ArrayList<>();
 
     protected final String IMEI;
 
@@ -31,12 +32,13 @@ public abstract class Phone implements PhoneBehaviour {
     protected Call sentCall;
 
     protected ServiceProvider serviceProvider;
+
     //When I instantiate the phone, the constructor instantiates all the phone agendas and give a random number
     //as an IMEI
     public Phone() {
         contacts = new ArrayList<>();
         messagesAgenda = new HashMap<>();
-        this.callAgenda=new HashMap<>();
+        this.callAgenda = new HashMap<>();
         batteryLife = 100;
         this.IMEI = String.valueOf(Math.random() * 1000);
     }
@@ -104,16 +106,17 @@ public abstract class Phone implements PhoneBehaviour {
         Contact contact = new Contact(firstName, lastName, phoneNumber);
         contacts.add(position, contact);
         messagesAgenda.put(contact, new MessageAgenda());
-        callAgenda.put(contact,new CallAgenda());
+        callAgenda.put(contact, new CallAgenda());
 
     }
+
     //This method adds a contact to contacts
     //It initializes the message agenda and call agenda for the added contact
     public void addContact(String phoneNumber, String firstName, String lastName) {
         Contact contact = new Contact(firstName, lastName, phoneNumber);
         contacts.add(contact);
         messagesAgenda.put(contact, new MessageAgenda());
-        callAgenda.put(contact,new CallAgenda());
+        callAgenda.put(contact, new CallAgenda());
     }
 
     public void getFirstContact() {
@@ -123,6 +126,7 @@ public abstract class Phone implements PhoneBehaviour {
     public void getLastContact() {
         System.out.println(contacts.get(contacts.size() - 1));
     }
+
     //This method gives a specific contact from contacts. It works with the phone number, first name and last name parameter.
     public Contact getContact(String string) {
         Contact contact = null;
@@ -140,6 +144,7 @@ public abstract class Phone implements PhoneBehaviour {
         }
         return contact;
     }
+
     //This method deletes a specific contact from contacts. It works with all the contact parameters
     public void deleteContact(String string) {
         Contact contact = null;
@@ -166,6 +171,7 @@ public abstract class Phone implements PhoneBehaviour {
             System.out.println(contact1);
         }
     }
+
     //This method prints the specific messages for a specific contact
     @Override
     public void seeMessagesForContact(String contact) {
@@ -181,10 +187,10 @@ public abstract class Phone implements PhoneBehaviour {
 
     @Override
     public Message getFirstMessage(String string) {
-        Message message=null;
-        for(Contact contact:contacts){
-            if(string.equals(contact.getPhoneNumber())){
-                message=messagesAgenda.get(contact).getMessageAgenda().get(0);
+        Message message = null;
+        for (Contact contact : contacts) {
+            if (string.equals(contact.getPhoneNumber())) {
+                message = messagesAgenda.get(contact).getMessageAgenda().get(0);
             }
         }
         return message;
@@ -192,18 +198,19 @@ public abstract class Phone implements PhoneBehaviour {
 
     @Override
     public Message getSecondMessage(String string) {
-        Message message=null;
-        for(Contact contact:contacts){
-            if(string.equals(contact.getPhoneNumber())){
-                message=messagesAgenda.get(contact).getMessageAgenda().get(1);
+        Message message = null;
+        for (Contact contact : contacts) {
+            if (string.equals(contact.getPhoneNumber())) {
+                message = messagesAgenda.get(contact).getMessageAgenda().get(1);
             }
         }
         return message;
     }
+
     //This method creates a Call object and returns it. It also adds the call to the callAgenda
     @Override
     public Call makeACall(String string) {
-        batteryLife-=2;
+        batteryLife -= 2;
         Contact contact = null;
         for (Contact contact1 : contacts) {
             if (string.equals(contact1.getFirstName())) {
@@ -218,10 +225,10 @@ public abstract class Phone implements PhoneBehaviour {
             }
         }
 
-        sentCall=new Call(contact.getPhoneNumber());
-        CallAgenda calls=callAgenda.get(contact);
+        sentCall = new Call(contact.getPhoneNumber());
+        CallAgenda calls = callAgenda.get(contact);
         calls.getCallAgenda().add(sentCall);
-        callAgenda.replace(contact,calls);
+        callAgenda.replace(contact, calls);
         allCalls.add(sentCall);
         return sentCall;
     }
@@ -230,12 +237,12 @@ public abstract class Phone implements PhoneBehaviour {
     @Override
     public void receiveACall() {
         System.out.println("You got a Call!");
-        receivedCall=serviceProvider.getCall();
-        for (Contact contact1 : contacts){
-            if(contact1.getPhoneNumber().equals(receivedCall.getPhoneNumber())){
-                CallAgenda calls=callAgenda.get(contact1);
+        receivedCall = serviceProvider.getCall();
+        for (Contact contact1 : contacts) {
+            if (contact1.getPhoneNumber().equals(receivedCall.getPhoneNumber())) {
+                CallAgenda calls = callAgenda.get(contact1);
                 calls.addCall(receivedCall);
-                callAgenda.replace(contact1,calls);
+                callAgenda.replace(contact1, calls);
             }
         }
         allCalls.add(receivedCall);
@@ -247,7 +254,7 @@ public abstract class Phone implements PhoneBehaviour {
 
     @Override
     public void seeAllCallHistory() {
-        for (Call call:allCalls){
+        for (Call call : allCalls) {
             System.out.println(call);
         }
     }
@@ -267,6 +274,7 @@ public abstract class Phone implements PhoneBehaviour {
     public void setMaterial(String material) {
         this.material = material;
     }
+
     //I wanted to create a method to set the curents phone number, so, when I make a call or send a message
     //the phone that gets the call/message sees the number of the phone that has made the call/message
     public void setMyPhoneNumber(String myPhoneNumber) {
