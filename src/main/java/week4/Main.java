@@ -18,14 +18,14 @@ public class Main {
         System.out.println(myIPhone.getBatteryLife());//the phone has a full battery
         System.out.println(myIPhone.getIMEI());
         myIPhone.addContact("444-888", "Jose", "Mourinho");
-        myIPhone.addContact("444-111","John","Oliver");
+        myIPhone.addContact("444-111", "John", "Oliver");
         myIPhone.setMyPhoneNumber("444-222");//this sets the phone's phone number. This phone belong to Didie Drogba.
         System.out.println();
 
-        Phone samsungGalaxy=new SamsungGalaxy();//this phone belongs to John Oliver
+        Phone samsungGalaxy = new SamsungGalaxy();//this phone belongs to John Oliver
         samsungGalaxy.setMyPhoneNumber("444-111");
         samsungGalaxy.setServiceProvider(orange);
-        samsungGalaxy.addContact("444-222","Didie","Drogba");
+        samsungGalaxy.addContact("444-222", "Didie", "Drogba");
 
         Phone mySamsung = new SamsungS8();
         //Phone myNewSamsung=new Samsung(); this does not compile
@@ -40,10 +40,10 @@ public class Main {
         mySamsung.getLastContact();
         System.out.println();
 
-        myIPhone.sendTextMessage("444-888","Hello Jose. Am I in the starting 11 players for tomorrow?");//sending a message to a contact
+        myIPhone.sendTextMessage("444-888", "Hello Jose. Am I in the starting 11 players for tomorrow?");//sending a message to a contact
         orange.transferMessaged(myIPhone);//the service provider transfers the message
         mySamsung.receiveTextMessage();//the second phone receives the message and prints to the console that we have a message
-        myIPhone.sendTextMessage("444-888","One more thing coach, at what hour do we start training today?");
+        myIPhone.sendTextMessage("444-888", "One more thing coach, at what hour do we start training today?");
         orange.transferMessaged(myIPhone);
         mySamsung.receiveTextMessage();
         System.out.println(myIPhone.getFirstMessage("444-888"));//gets the first message sent to this contact
@@ -65,9 +65,6 @@ public class Main {
         System.out.println(myIPhone.getBatteryLife());//-2 hours for 2 mesages and -2 hours for one call
         System.out.println();
         samsungGalaxy.seeAllCallHistory();//the phone that is called shows the number that has called it and the hour minute and second
-
-
-
 
 
     }
