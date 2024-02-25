@@ -1,4 +1,4 @@
-package week5Assigments.ObjectContainer1.UtilityClases;
+package week5Assigments.ObjectContainer1.UtilityClasses;
 
 import java.util.List;
 

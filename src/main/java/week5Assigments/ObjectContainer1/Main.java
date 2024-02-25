@@ -3,8 +3,8 @@ package week5Assigments.ObjectContainer1;
 import week5Assigments.ObjectContainer1.ComparatorClasses.ComparatorByName;
 import week5Assigments.ObjectContainer1.ComparatorClasses.CompareByAge;
 import week5Assigments.ObjectContainer1.Person.*;
-import week5Assigments.ObjectContainer1.UtilityClases.Address;
-import week5Assigments.ObjectContainer1.UtilityClases.Hobby;
+import week5Assigments.ObjectContainer1.UtilityClasses.Address;
+import week5Assigments.ObjectContainer1.UtilityClasses.Hobby;
 
 import java.util.*;
 
