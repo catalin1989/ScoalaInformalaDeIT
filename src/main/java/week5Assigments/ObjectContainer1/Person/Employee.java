@@ -1,6 +1,6 @@
 package week5Assigments.ObjectContainer1.Person;
 
-import week5Assigments.ObjectContainer1.UtilityClases.Hobby;
+import week5Assigments.ObjectContainer1.UtilityClasses.Hobby;
 
 import java.util.List;
 
