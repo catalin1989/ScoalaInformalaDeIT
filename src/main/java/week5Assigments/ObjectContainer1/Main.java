@@ -36,10 +36,13 @@ public class Main {
         Person employee1 = new Employee("Zamfirescu Bogdan", 35);
         Person retired = new Retired("Voiculescu Dan", 72);
         Person retired1 = new Retired("Voiculescu Dan", 72);
+
+
         Set<Person> setByAge = new TreeSet<>(new CompareByAge());
         setByAge.add(pupil);
         setByAge.add(pupil1);//this will go in the TreeSet
         setByAge.add(student);
+        setByAge.add(student1);
         setByAge.add(employee);
         setByAge.add(employee1);//this will go in the TreeSet
         setByAge.add(retired);
@@ -52,11 +55,13 @@ public class Main {
 
         Set<Person> setByName = new TreeSet<>(new ComparatorByName());
         setByName.add(pupil);
+        setByName.add(pupil1);
         setByName.add(student);
         setByName.add(student1);//this object will be added in the TreeSet, they have the same name but different age;
         setByName.add(employee);
         setByName.add(employee1);//this object won't be added in the ThreeSet, it is the same as employee, based on the CompareByName
         setByName.add(retired);
+        setByName.add(retired1);
         System.out.println();
         System.out.println("Printing the TreeSet sorted by name");
         for (Person person : setByName) {
