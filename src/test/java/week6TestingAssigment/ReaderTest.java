@@ -2,6 +2,8 @@ package week6TestingAssigment;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -37,5 +39,10 @@ class ReaderTest {
         assertFalse(reader.enteredNegativeNumber(5));
     }
 
+    @ParameterizedTest
+    @ValueSource(strings={"km","m","dm","cm","mm"})
+    void enteredValidMetricMeasurementUnits(String input){
+        assertFalse(reader.enteredUnknownUnitMeasurement(input));
+    }
 
 }
