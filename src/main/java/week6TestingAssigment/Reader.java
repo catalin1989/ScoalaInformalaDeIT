@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 //This class is responsible for the input from the user
@@ -27,19 +28,19 @@ public class Reader {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
                 String data = reader.readLine();
-                String[] array = data.split(" ");
+                String[] array = data.trim().split(" ");
                 try {
-                    if (array.length == 1) {
+                    if (enteredEmptyLine(array)) {
                         throw new IllegalArgumentException("You entered an empty line!");
                     }
                     int number = Integer.parseInt(array[0]);
-                    if (number < 0) {
+                    if (enteredNegativeNumber(number)) {
                         throw new IllegalArgumentException("You entered a negative number. A distance can't be negative!");
                     }
-                    if (array[1] == null) {
+                    if (enteredNumberWithoutUnitMeasurement(array)) {
                         throw new IllegalArgumentException("You haven't entered a unit measurement!");
                     }
-                    if (!array[1].equals("mm") && !array[1].equals("cm") && !array[1].equals("dm") && !array[1].equals("m") && !array[1].equals("km")) {
+                    if (enteredUnknownUnitMeasurement(array[1])) {
                         throw new IllegalArgumentException("Unknown unit measurement format!");
 
                     }
@@ -53,7 +54,7 @@ public class Reader {
                 //If the user inputs an unknown mathematical sign, the method will clean the values ArrayList.
                 String sign = reader.readLine();
                 try {
-                    if (!sign.equals("+") && !(sign.equals("-")) && !sign.equals("=")) {
+                    if (enteredUnknownMathemathicalSign(sign)) {
                         values.clear();
                         throw new IllegalArgumentException("Unknown operation type.Please rerun the program");
 
@@ -73,4 +74,41 @@ public class Reader {
 
 
     }
+
+    protected boolean enteredEmptyLine(String[] array) {
+        boolean result = false;
+        try {
+            int a = Integer.parseInt(array[0]);
+        } catch (Exception e) {
+            result = true;
+        }
+        return result;
+    }
+
+    protected boolean enteredNegativeNumber(int number) {
+        return number < 0;
+    }
+
+    protected boolean enteredNumberWithoutUnitMeasurement(String[] string) {
+        boolean result = false;
+        try {
+            int number = Integer.parseInt(string[0]);
+            if (string.length == 1) {
+                result = true;
+            }
+        } catch (Exception e) {
+
+        }
+        return result;
+    }
+
+    protected boolean enteredUnknownUnitMeasurement(String string) {
+        return !string.equals("mm") && !string.equals("cm") && !string.equals("dm") && !string.equals("m") && !string.equals("km");
+    }
+
+    protected boolean enteredUnknownMathemathicalSign(String string) {
+        return !string.equals("+") && !string.equals("-") && !string.equals("=");
+    }
+
 }
+
