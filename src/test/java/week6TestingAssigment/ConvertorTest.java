@@ -1,12 +1,23 @@
 package week6TestingAssigment;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.runner.RunWith;
+
+import java.util.ArrayList;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@RunWith(JUnitParamsRunner.class)
 class ConvertorTest {
     private Convertor convertor;
+
 
     @BeforeEach
     void setUp() {
@@ -26,4 +37,20 @@ class ConvertorTest {
         assertEquals(10000, number);
     }
 
-}
+    private static Stream<Arguments> convertValidDataToCm_expectedSuccess(){
+        return Stream.of(
+                Arguments.of("km",1,100000),
+                Arguments.of("m",1,100),
+                Arguments.of("dm",100,1000)
+        );
+    }
+    @ParameterizedTest
+    @MethodSource
+    public void convertValidDataToCm_expectedSuccess(String metricMeasurement, int distance, int expectedResult){
+        int result=convertor.convertToCentimeters(metricMeasurement,distance);
+        assertEquals(expectedResult,result);
+    }
+
+
+    }
+
