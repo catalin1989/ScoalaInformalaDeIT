@@ -16,7 +16,7 @@ public class Calculator {
     //in this field I will store the converted values 10 km converted to m, it will store 1000
     private final List<Integer> convertedValues = new ArrayList<>();
     private int minimMeasurmentUnit;
-    private boolean errorFlag = false;
+    private boolean unitMeasurment = false;
 
     public Calculator(Reader reader, Convertor convertor) {
         this.reader = reader;
@@ -117,7 +117,7 @@ public class Calculator {
         int result = 0;
         try {
             if (convertedValues.isEmpty()) {
-                errorFlag = true;
+                unitMeasurment = true;
                 throw new IllegalArgumentException("No numbers to process");
 
             }
@@ -143,7 +143,7 @@ public class Calculator {
         assignTheInputData();
         convertInputValues();
         int result = calculateTheResult();
-        if (errorFlag) {
+        if (unitMeasurment) {
             System.out.println("The calculator can't print the result due to an error");
             return;
         }
