@@ -20,25 +20,26 @@ class MyReaderTest {
             .toString();
 
     @BeforeEach
-    void settUp(){
-        reader=new MyReader();
+    void settUp() {
+        reader = new MyReader();
     }
+
     @Test
-    void readFromAProperDocument_allLinesHaveBeenRead_resultSuccessful(){
-        String fileName="AthletesCorrectDocumentForTest.csv";
-            reader.read(resourcesPath+fileName);
-            assertEquals(4,reader.getData().size());
+    void readFromAProperDocument_allLinesHaveBeenRead_resultSuccessful() {
+        String fileName = "AthletesCorrectDocumentForTest.csv";
+        reader.read(resourcesPath + fileName);
+        assertEquals(4, reader.getData().size());
     }
+
     @Test
-    void readFromAnImproperFilledDocument_expectAnError_resultIllegalArgumentException(){
-        String fileName="AthletesImproperFilledDocument.csv";
-        boolean flag=false;
-        try{
-            reader.read(resourcesPath+fileName);
-        }
-        catch (IllegalArgumentException e){
+    void readFromAnImproperFilledDocument_expectAnError_resultIllegalArgumentException() {
+        String fileName = "AthletesImproperFilledDocument.csv";
+        boolean flag = false;
+        try {
+            reader.read(resourcesPath + fileName);
+        } catch (IllegalArgumentException e) {
             System.out.println(e);
-            flag=true;
+            flag = true;
         }
         assertTrue(flag);
     }

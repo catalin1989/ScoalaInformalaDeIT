@@ -8,7 +8,7 @@ public class MyPrinter {
 
     public static void printTheTop3(Set<Athlete> sortedAthletesByTime) {
         try {
-            if(sortedAthletesByTime.isEmpty()){
+            if (sortedAthletesByTime.isEmpty()) {
                 throw new IllegalArgumentException("There is nothing to print because you have a problem with the input");
             }
             List<Athlete> sortedAthletes = new ArrayList<>(sortedAthletesByTime);
@@ -24,15 +24,15 @@ public class MyPrinter {
                     sortedAthletes.get(2).getName() + " " +
                     sortedAthletes.get(2).getTime() + " " +
                     sortedAthletes.get(2).getTimeAndPenalty());
-        }
-        catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.out.println(e);
         }
     }
-    public static void printAllTheResult(Set<Athlete> sortedAthletesByTime){
+
+    public static void printAllTheResult(Set<Athlete> sortedAthletesByTime) {
         List<Athlete> sortedAthletes = new ArrayList<>(sortedAthletesByTime);
-        for(int i=0;i<sortedAthletesByTime.size();i++){
-            System.out.println(i+1+" "+sortedAthletes.get(i));
+        for (int i = 0; i < sortedAthletesByTime.size(); i++) {
+            System.out.println(i + 1 + " " + sortedAthletes.get(i));
         }
     }
 }

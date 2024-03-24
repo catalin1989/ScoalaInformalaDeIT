@@ -5,9 +5,10 @@ public enum Places {
     Runner_up("Runner-up"),
     Third_Place("Third Place");
 
-    private String name;
-    private Places(String name){
-        this.name=name;
+    private final String name;
+
+    Places(String name) {
+        this.name = name;
     }
 
     public String getName() {

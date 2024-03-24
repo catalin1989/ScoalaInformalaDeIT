@@ -1,6 +1,6 @@
 package week_7_io_enums_assigment;
 
-public class Athlete implements Comparable<Athlete>{
+public class Athlete implements Comparable<Athlete> {
     private String name;
 
     private String time;
@@ -39,16 +39,16 @@ public class Athlete implements Comparable<Athlete>{
 
     @Override
     public int compareTo(Athlete o) {
-        String[] firstAthleteTime=this.time.split(":");
-        int firstAthleteMinutes=Integer.parseInt(firstAthleteTime[0]);
-        int firstAthleteSeconds=Integer.parseInt(firstAthleteTime[1]);
-        String[] secondAthleteTime=o.time.split(":");
-        int secondAthleteMinutes=Integer.parseInt(secondAthleteTime[0]);
-        int secondAthleteSeconds=Integer.parseInt(secondAthleteTime[1]);
-        if(firstAthleteMinutes==secondAthleteMinutes){
-            return firstAthleteSeconds-secondAthleteSeconds;
+        String[] firstAthleteTime = this.time.split(":");
+        int firstAthleteMinutes = Integer.parseInt(firstAthleteTime[0]);
+        int firstAthleteSeconds = Integer.parseInt(firstAthleteTime[1]);
+        String[] secondAthleteTime = o.time.split(":");
+        int secondAthleteMinutes = Integer.parseInt(secondAthleteTime[0]);
+        int secondAthleteSeconds = Integer.parseInt(secondAthleteTime[1]);
+        if (firstAthleteMinutes == secondAthleteMinutes) {
+            return firstAthleteSeconds - secondAthleteSeconds;
         }
-        return firstAthleteMinutes-secondAthleteMinutes;
+        return firstAthleteMinutes - secondAthleteMinutes;
     }
 
     @Override
