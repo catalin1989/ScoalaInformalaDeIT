@@ -27,7 +27,6 @@ public class MyReader {
             System.out.println(e);
         }
         checkIfDocumentHasAllFieldsFilled();
-
     }
     //This method checks if all the fields of the document have benn field. We don't want to calculate the winner
     //with missing data
