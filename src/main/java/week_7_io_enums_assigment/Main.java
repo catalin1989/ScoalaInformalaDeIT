@@ -15,14 +15,18 @@ public class Main {
         String inputFileName = "Athletes.csv";
 
         MyReader reader1 = new MyReader();
-        reader1.read(resourcesPath + inputFileName);
-        MyCalculator calculator = new MyCalculator();
-        calculator.processTime(reader1.getData());
-        calculator.createAthletesAndAddThemToTheSet();
-        MyPrinter.printTheTop3(calculator.getSortedAthletesByTime());
-        System.out.println();
-        MyPrinter.printAllTheResult(calculator.getSortedAthletesByTime());
+        try {
+            reader1.read(resourcesPath + inputFileName);
+            MyCalculator calculator = new MyCalculator();
+            calculator.processTime(reader1.getData());
+            calculator.createAthletesAndAddThemToTheSet();
+            MyPrinter.printTheTop3(calculator.getSortedAthletesByTime());
+            System.out.println();
+            MyPrinter.printAllTheResult(calculator.getSortedAthletesByTime());
+        }
+        catch (IllegalArgumentException e){
+            System.err.println(e);
 
-
+        }
     }
 }
