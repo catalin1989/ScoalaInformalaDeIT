@@ -1,0 +1,31 @@
+2024-04-03 INFO: All the data entered for Aston Martin are valid. The student info can be added to the repository
+2024-04-03 INFO: All the data entered for Aston Martin are valid. The student info can be added to the repository
+2024-04-03 INFO: All the data entered for David Beckam are valid. The student info can be added to the repository
+2024-04-03 INFO: Student{first name='Aston', last name='Martin', birth day='05.02.1991', CNP='1910205125497'} has been successfully added to the data base.
+2024-04-03 INFO: Student{first name='David', last name='Beckam', birth day='04.03.1991', CNP='1910304125597'} has been successfully added to the data base.
+2024-04-03 INFO: Printing the list of students:
+2024-04-03 INFO: All the data entered for Aston Martin are valid. The student info can be added to the repository
+2024-04-03 INFO: All the data entered for David Beckam are valid. The student info can be added to the repository
+2024-04-03 INFO: Student{first name='Aston', last name='Martin', birth day='05.02.1991', CNP='1910205125497'} has been successfully added to the data base.
+2024-04-03 INFO: Student{first name='David', last name='Beckam', birth day='04.03.1991', CNP='1910304125597'} has been successfully added to the data base.
+2024-04-03 INFO: Successfully deleted Student{first name='Aston', last name='Martin', birth day='05.02.1991', CNP='1910205125497'} from the data base.
+2024-04-03 INFO: All the data entered for Aston Martin are valid. The student info can be added to the repository
+2024-04-03 INFO: All the data entered for David Beckam are valid. The student info can be added to the repository
+2024-04-03 INFO: Student{first name='Aston', last name='Martin', birth day='05.02.1991', CNP='1910205125497'} has been successfully added to the data base.
+2024-04-03 INFO: Student{first name='David', last name='Beckam', birth day='04.03.1991', CNP='1910304125597'} has been successfully added to the data base.
+2024-04-03 INFO: No such student found in the data base
+2024-04-03 INFO: All the data entered for Aston Martin are valid. The student info can be added to the repository
+2024-04-03 INFO: All the data entered for David Beckam are valid. The student info can be added to the repository
+2024-04-03 INFO: Student{first name='Aston', last name='Martin', birth day='05.02.1991', CNP='1910205125497'} has been successfully added to the data base.
+2024-04-03 INFO: Student{first name='David', last name='Beckam', birth day='04.03.1991', CNP='1910304125597'} has been successfully added to the data base.
+2024-04-03 INFO: All the data entered for Aston Martin are valid. The student info can be added to the repository
+2024-04-03 INFO: Student{first name='Aston', last name='Martin', birth day='10.05.1989', CNP='1890510123456'} has been successfully added to the data base.
+2024-04-03 INFO: All the data entered for Aston Martin are valid. The student info can be added to the repository
+2024-04-03 INFO: All the data entered for David Beckam are valid. The student info can be added to the repository
+2024-04-03 INFO: Student{first name='Aston', last name='Martin', birth day='05.02.1991', CNP='1910205125497'} has been successfully added to the data base.
+2024-04-03 INFO: Student{first name='David', last name='Beckam', birth day='04.03.1991', CNP='1910304125597'} has been successfully added to the data base.
+2024-04-03 INFO: There is no student with this age: 19
+2024-04-03 INFO: All the data entered for Aston Martin are valid. The student info can be added to the repository
+2024-04-03 INFO: All the data entered for David Beckam are valid. The student info can be added to the repository
+2024-04-03 INFO: Student{first name='Aston', last name='Martin', birth day='05.02.1991', CNP='1910205125497'} has been successfully added to the data base.
+2024-04-03 INFO: Student{first name='David', last name='Beckam', birth day='04.03.1991', CNP='1910304125597'} has been successfully added to the data base.
