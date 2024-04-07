@@ -58,19 +58,7 @@ public class MyProcessor {
         return String.format("%s %s",array[1],array[2]);
     }
 
-    public void writeToFile(String fileName) throws IOException {
-        System.out.println("Starting to write to file!");
-        try(BufferedWriter writer=new BufferedWriter(new FileWriter(fileName))){
-            writer.write("First Name, Last Name \n");
-            for (String s:listWithCharacters){
-                String[] array=s.split(" ");
-                writer.write(array[0]+","+array[1]+"\n");
-            }
-        }
-        catch (IOException e){
-            System.out.println(e);
-        }
-    }
+
 
     public List<String> getListWithData() {
         return listWithData;
