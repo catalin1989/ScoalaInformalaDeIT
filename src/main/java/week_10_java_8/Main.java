@@ -17,11 +17,13 @@ public class Main {
          String fileNameForWriting="MovieCharactersFilteredByMonthOfBirth.csv";
 try {
     MyReader reader=new MyReader();
-    reader.readData(resourcesPath + fileNameForReading);
+    reader.readData(resourcesPath + fileNameForReading);//reading the data
     MyProcessor processor = new MyProcessor();
     processor.setListWithData(reader.getListWithData());
-    processor.getCharactersWithSelectedMonth(12);
-    processor.writeToFile(resourcesPath + fileNameForWriting);
+    processor.getCharactersWithSelectedMonth(12);//analyzing the data
+    MyWriter writer=new MyWriter();
+    writer.setListWithCharacters(processor.getListWithCharacters());
+    writer.writeToFile(resourcesPath+fileNameForWriting);
 }
 catch (IllegalArgumentException e){
     System.out.println(e);

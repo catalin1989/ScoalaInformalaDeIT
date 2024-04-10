@@ -1,4 +1,4 @@
-package week_7_io_enums_assigment;
+package week_8_io_enums_assigment;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

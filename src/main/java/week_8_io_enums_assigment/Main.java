@@ -1,4 +1,4 @@
-package week_7_io_enums_assigment;
+package week_8_io_enums_assigment;
 
 import java.io.File;
 import java.io.FileNotFoundException;

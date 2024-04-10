@@ -1,10 +1,9 @@
-package week_7_io_enums_assigment;
+package week_8_io_enums_assigment;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
