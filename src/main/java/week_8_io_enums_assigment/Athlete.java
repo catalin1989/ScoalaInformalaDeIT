@@ -1,4 +1,4 @@
-package week_7_io_enums_assigment;
+package week_8_io_enums_assigment;
 
 public class Athlete implements Comparable<Athlete> {
     private String name;

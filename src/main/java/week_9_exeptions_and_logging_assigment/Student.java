@@ -1,7 +1,4 @@
-package week_8_exeptions_and_logging_assigment;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+package week_9_exeptions_and_logging_assigment;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,12 +1,4 @@
-package week_8_exeptions_and_logging_assigment;
-
-import org.apache.logging.log4j.LogManager;
-
-import java.util.logging.Formatter;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
+package week_9_exeptions_and_logging_assigment;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package week_8_exeptions_and_logging_assigment;
+package week_9_exeptions_and_logging_assigment;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

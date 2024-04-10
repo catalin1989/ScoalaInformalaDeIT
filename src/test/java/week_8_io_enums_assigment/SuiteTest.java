@@ -1,9 +1,9 @@
-package week_8_exeptions_and_logging_assigment;
+package week_8_io_enums_assigment;
 
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
 @Suite
-@SelectClasses({StudentTest.class, StudentRepositoryTest.class})
+@SelectClasses({MyCalculatorTest.class, MyReaderTest.class, AthleteTest.class})
 public class SuiteTest {
 }
